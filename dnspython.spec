@@ -4,7 +4,7 @@
 #
 Name     : dnspython
 Version  : 1.12.0
-Release  : 15
+Release  : 16
 URL      : https://pypi.python.org/packages/source/d/dnspython/dnspython-1.12.0.zip
 Source0  : https://pypi.python.org/packages/source/d/dnspython/dnspython-1.12.0.zip
 Summary  : DNS toolkit
