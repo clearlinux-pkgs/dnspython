@@ -1,4 +1,5 @@
 PKG_NAME := dnspython
-URL := https://pypi.python.org/packages/source/d/dnspython/dnspython-1.12.0.zip
+URL := http://pypi.debian.net/dnspython/dnspython-1.14.0.zip
+ARCHIVES :=
 
 include ../common/Makefile.common
