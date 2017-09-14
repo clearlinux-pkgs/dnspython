@@ -4,7 +4,7 @@
 #
 Name     : dnspython
 Version  : 1.15.0
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Source0  : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Summary  : DNS toolkit
@@ -52,7 +52,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505001928
+export SOURCE_DATE_EPOCH=1505362829
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -62,7 +62,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd tests ; make test
 %install
-export SOURCE_DATE_EPOCH=1505001928
+export SOURCE_DATE_EPOCH=1505362829
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
