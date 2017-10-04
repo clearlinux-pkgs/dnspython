@@ -4,13 +4,14 @@
 #
 Name     : dnspython
 Version  : 1.15.0
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Source0  : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Summary  : DNS toolkit
 Group    : Development/Tools
 License  : ISC
 Requires: dnspython-legacypython
+Requires: dnspython-python3
 Requires: dnspython-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -30,6 +31,7 @@ record types. It can be used for queries, zone transfers, and dynamic
 %package legacypython
 Summary: legacypython components for the dnspython package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the dnspython package.
@@ -39,9 +41,19 @@ legacypython components for the dnspython package.
 Summary: python components for the dnspython package.
 Group: Default
 Requires: dnspython-legacypython
+Requires: dnspython-python3
 
 %description python
 python components for the dnspython package.
+
+
+%package python3
+Summary: python3 components for the dnspython package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the dnspython package.
 
 
 %prep
@@ -52,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505362829
+export SOURCE_DATE_EPOCH=1507153236
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -62,7 +74,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd tests ; make test
 %install
-export SOURCE_DATE_EPOCH=1505362829
+export SOURCE_DATE_EPOCH=1507153236
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -78,5 +90,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
