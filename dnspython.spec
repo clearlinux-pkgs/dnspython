@@ -4,7 +4,7 @@
 #
 Name     : dnspython
 Version  : 1.15.0
-Release  : 39
+Release  : 40
 URL      : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Source0  : http://pypi.debian.net/dnspython/dnspython-1.15.0.zip
 Summary  : DNS toolkit
