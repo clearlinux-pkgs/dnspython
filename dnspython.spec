@@ -6,7 +6,7 @@
 #
 Name     : dnspython
 Version  : 1.16.0
-Release  : 53
+Release  : 54
 URL      : https://files.pythonhosted.org/packages/ec/c5/14bcd63cb6d06092a004793399ec395405edf97c2301dfdc146dfbd5beed/dnspython-1.16.0.zip
 Source0  : https://files.pythonhosted.org/packages/ec/c5/14bcd63cb6d06092a004793399ec395405edf97c2301dfdc146dfbd5beed/dnspython-1.16.0.zip
 Source1  : https://files.pythonhosted.org/packages/ec/c5/14bcd63cb6d06092a004793399ec395405edf97c2301dfdc146dfbd5beed/dnspython-1.16.0.zip.asc
@@ -23,14 +23,13 @@ BuildRequires : ecdsa
 BuildRequires : idna
 
 %description
-dnspython is a DNS toolkit for Python. It supports almost all
 record types. It can be used for queries, zone transfers, and dynamic
-updates.  It supports TSIG authenticated messages and EDNS0.
-
-dnspython provides both high and low level access to DNS. The high
-level classes perform queries for data of a given name, type, and
-class, and return an answer set.  The low level classes allow
-direct manipulation of DNS zones, messages, names, and records.
+        updates.  It supports TSIG authenticated messages and EDNS0.
+        
+        dnspython provides both high and low level access to DNS. The high
+        level classes perform queries for data of a given name, type, and
+        class, and return an answer set.  The low level classes allow
+        direct manipulation of DNS zones, messages, names, and records.
 
 %package license
 Summary: license components for the dnspython package.
@@ -68,12 +67,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582919521
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603391203
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
